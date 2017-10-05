@@ -1,6 +1,6 @@
 const Sequelize = require ('sequelize')
 
-const dialect = process.ENV.DB_DIALECT || 'mysql';
+const dialect = process.env.DB_DIALECT || 'mysql';
 
 module.exports = (app, resolve, reject) => {
 
