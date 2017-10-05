@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 
 module.exports = (app) => {
 
-	return app.sequelize.define('module', {
+	return app.sequelize.define('contents', {
         id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
@@ -13,10 +13,10 @@ module.exports = (app) => {
         title : {
         	type: Sequelize.STRING
         },
-        logo : {
-        	type: Sequelize.STRING 
+				description : {
+        	type: Sequelize.STRING(1234)
         },
-        content : {
+        fileUrl : {
         	type : Sequelize.STRING
         }
 	})

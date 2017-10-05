@@ -4,6 +4,7 @@ require('./settings')(app)
 require('./databases')(app)
 .then(() => { require ('./models')(app) })
 .then(() => { require ('./boot')(app) })
+.then(() => { require ('./middlewares')(app) })
 .then(() => { require ('./actions')(app) })
 .then(() => { require ('./routes')(app) })
 .then(() => {

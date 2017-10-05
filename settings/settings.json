@@ -6,5 +6,8 @@
 		"password" : "template",
 		"host" : "127.0.0.1",
 		"database" : "test"
+	},
+	"security" : {
+		"salt"  : "3657393"
 	}
 }

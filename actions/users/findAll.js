@@ -1,10 +1,13 @@
 
 module.exports = (app) => {
-
 	const User = app.models.User
-
+	const Specialty = app.models.Specialty
+	const Content = app.models.Content
+	
 	return function findAll(req, res, next){
-		User.findAll().then((users) => {
+		User.findAll({
+			include : [ {model : Specialty, as:'specialties'}, {model : Content, as:'contents'}]
+		}).then((users) => {
 				if(!users){
 					return res.sendStatus(404)
 				}
