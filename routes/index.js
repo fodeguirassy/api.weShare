@@ -9,6 +9,7 @@ module.exports = (app) => {
 	app.use('/users', require ('./users')(app));
 	app.use('/auth', require ('./auth')(app));
 	app.use('/contents', require('./contents')(app));
+	//app.use('/medias', require('./medias')(app));
 	app.use(morgan('combined'));
 
 	/*
@@ -16,6 +17,13 @@ module.exports = (app) => {
 		console.error(err);
 		next();
 	});
+
+	// MEDIAS UPLOADING
+     router.post('/upload',
+         app.middlewares.security.isAuthenticated,
+         app.middlewares.uploader.single("picture"),
+         app.actions.medias.create
+     );
 	*/
 
 }

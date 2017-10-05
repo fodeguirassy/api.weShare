@@ -10,8 +10,8 @@ module.exports = (app) => {
 		Question : require ('./question')(app),
 		Response : require ('./response')(app),
 		Specialty : require ('./specialty')(app),
-		Token : require ('./token')(app)
-
+		Token : require ('./token')(app),
+		Media : require ('./media')(app)
 	};
 
 	app.models.User.hasMany(app.models.Specialty, {as : "specialties"})
@@ -19,6 +19,7 @@ module.exports = (app) => {
 	app.models.Content.hasOne(app.models.Specialty)
 
 	//app.models.Content.hasOne(app.models.User, { as:'owner' })
+
 
 	app.models.Evaluation.belongsTo(app.models.Content, {onDelete : 'cascade'})
 	//app.models.User.hasOne(app.models.Token)
