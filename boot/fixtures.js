@@ -9,17 +9,16 @@ module.exports = (app) => {
 		{force : true}
 	).then(() => {
 
-		Specialty.findOrCreate ( { where : { title : "Nodejs",logo : "http://www.lnwebworks.com/sites/default/files/node.png" } })
-		Specialty.findOrCreate ( { where : { title : "Android",logo : "http://www.pngmart.com/files/4/Android-PNG-Pic.png" } }),
-		Specialty.findOrCreate ( { where : { title : "iOS",logo : "https://www.adiants.com/wp-content/uploads/2016/07/app-ios-png-4.png"} })
-		Specialty.findOrCreate ( { where : { title : "Kotlin",logo : "https://vincentaube.net/images/language/kotlin.png" } })
-		Specialty.findOrCreate ( { where : { title : "Git",logo : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Git-logo-black.svg/500px-Git-logo-black.svg.png"} })
-		Specialty.findOrCreate ( { where : { title : "Swift",logo : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Swift_logo_with_text.svg/2000px-Swift_logo_with_text.svg.png"} })
+		Specialty.findOrCreate ( { where : { title : "nodejs",logo:"http://www.lnwebworks.com/sites/default/files/node.png" } })
+		Specialty.findOrCreate ( { where : { title : "android",logo : "http://www.pngmart.com/files/4/Android-PNG-Pic.png" } }),
+		Specialty.findOrCreate ( { where : { title : "ios",logo : "https://www.adiants.com/wp-content/uploads/2016/07/app-ios-png-4.png"} })
+		Specialty.findOrCreate ( { where : { title : "kotlin",logo : "https://vincentaube.net/images/language/kotlin.png" } })
+		Specialty.findOrCreate ( { where : { title : "git",logo : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Git-logo-black.svg/500px-Git-logo-black.svg.png"} })
+		Specialty.findOrCreate ( { where : { title : "swift",logo : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Swift_logo_with_text.svg/2000px-Swift_logo_with_text.svg.png"} })
 
 
 		User.findOrCreate({ where : { username : "Fodé Guirassy", password : sha1("yolo")}})
 						.spread((user) => user.setSpecialties([4, 5])).then((user) => user.setContents([3]))
-
 		User.findOrCreate ({where:{username : "Serey Pich", password : sha1("saaaaa")}}).spread((user) => user.setSpecialties([3]))
 		User.findOrCreate ({where:{username:"Karan WhatEver", password : sha1("pouet")}}).spread((user) => user.setSpecialties([1, 2]))
 
@@ -34,7 +33,5 @@ module.exports = (app) => {
 		Content.findOrCreate({where : {title:'Développement Android', fileUrl:'http://www.univ-orleans.fr/lifo/Members/Jean-Francois.Lalande/enseignement/android/cours-android.pdf', description:'Le but de ce cours est de découvrir la programmation sous Android, sa plate-forme de développement et les spécificités du développement embarqué sur smartphone.'}}).spread((content) => {content.setSpecialty(2)})
 		Content.findOrCreate({where : {title:'Tutoriel Git', fileUrl:'http://www.lmd.polytechnique.fr/~dkhvoros/teach/tutoriel-git.pdf', description:'Git est un gestionnaire de version, libre et tres performant. Il possede de nombreuxavantages par rapport a svn, notamment, la possibilite de travailler localement. C’est a dire de faire des commits local et de les editer localement avant de les pousser vers un serveur pour qu’ils soient integres au depot central.'}})
 						.spread((content) => {content.setSpecialty(1)})
-
 	})
-
 }
