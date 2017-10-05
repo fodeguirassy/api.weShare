@@ -18,6 +18,7 @@ module.exports = (app) => {
                         res.send({ user: user, token:encryptedToken });
                         */
                         //user.setToken(encryptedToken)
+                        
                         user.token = encryptedToken
                         user.save()
                         res.send({ user: user, token:encryptedToken });

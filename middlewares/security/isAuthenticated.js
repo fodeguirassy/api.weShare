@@ -6,6 +6,7 @@ module.exports = (app) => {
 
   return (req, res, next) => {
         if(!req.headers || !req.headers.authorization) return res.status(403).send('Authentication required');
+
         console.log('token is  ' + req.headers.authorization);
 
         User.findOne({
