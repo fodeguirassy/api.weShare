@@ -6,7 +6,7 @@ module.exports = (app) => {
 		Content : require ('./content')(app),
 		Question : require ('./question')(app),
 		Response : require ('./response')(app),
-		Specialty : require ('./Specialty')(app),
+		Specialty : require ('./specialty')(app),
 		Token : require ('./token')(app)
 
 	};
