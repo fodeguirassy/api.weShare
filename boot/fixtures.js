@@ -17,7 +17,7 @@ module.exports = (app) => {
 		Specialty.findOrCreate ( { where : { title : "swift",logo : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Swift_logo_with_text.svg/2000px-Swift_logo_with_text.svg.png"} })
 
 
-		User.findOrCreate({ where : { username : "Fodé Guirassy", password : sha1("yolo")}})
+		User.findOrCreate({ where : { username : "Fodé Guirassy", password : sha1("yolooo")}})
 						.spread((user) => user.setSpecialties([4, 5])).then((user) => user.setContents([3]))
 		User.findOrCreate ({where:{username : "Serey Pich", password : sha1("saaaaa")}}).spread((user) => user.setSpecialties([3]))
 		User.findOrCreate ({where:{username:"Karan Guljinder", password : sha1("pouet")}}).spread((user) => user.setSpecialties([1, 2]))
