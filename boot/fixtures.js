@@ -32,7 +32,7 @@ module.exports = (app) => {
 		User.findOrCreate({ where : { username : "Fodé Guirassy", password : sha1("yolo")}})
 				.spread((user) => user.setSpecialties([4, 5])).then((user) => user.setContents([3]))
 
-		User.findOrCreate ({where:{username : "Serey Pich", password : sha1("saaa")}}).spread((user) => user.setSpecialties([3]))
+		User.findOrCreate ({where:{username : "Serey Pich", password : sha1("saaaaa")}}).spread((user) => user.setSpecialties([3]))
 		User.findOrCreate ({where:{username:"Karan WhatEver", password : sha1("pouet")}}).spread((user) => user.setSpecialties([1, 2]))
 
 
