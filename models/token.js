@@ -6,6 +6,9 @@ module.exports = (app) => {
             defaultValue: Sequelize.UUIDV1,
             primaryKey: true,
             allowNull: false
+        },
+        userId : {
+            type: Sequelize.INTEGER
         }
     });
 };

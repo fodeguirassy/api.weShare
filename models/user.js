@@ -3,7 +3,6 @@ const Sequelize = require('sequelize');
 module.exports = (app) => {
 	 return app.sequelize.define('user', {
         id: {
-
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true,
@@ -16,6 +15,9 @@ module.exports = (app) => {
         password: {
             type: Sequelize.STRING,
             allowNull: false
-        }
+        },
+				token : {
+					type: Sequelize.STRING
+				}
     });
 }

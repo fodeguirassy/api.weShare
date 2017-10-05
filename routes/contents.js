@@ -5,8 +5,12 @@ module.exports = (app) => {
               app.middlewares.parsers.contents,
               app.actions.contents.findOne
             )
-
   router.get('/', app.actions.contents.findAll)
 
+  router.post('/',
+              app.middlewares.security.isAuthenticated,
+              app.middlewares.validators.contents,
+              app.actions.contents.create
+            )
   return router;
 }

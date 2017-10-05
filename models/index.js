@@ -21,4 +21,5 @@ module.exports = (app) => {
 	//app.models.Content.hasOne(app.models.User, { as:'owner' })
 
 	app.models.Evaluation.belongsTo(app.models.Content, {onDelete : 'cascade'})
+	//app.models.User.hasOne(app.models.Token)
 }

@@ -13,7 +13,13 @@ module.exports = (app) => {
                 let token = Token.build({ userId: user.id });
                 token.save().then((token) => {
                     jwt.sign({ tokenId : token.id }, app.settings.security.salt, { expiresIn: '1d' }, (err, encryptedToken) => {
+                        /*
                         if(err) return res.status(500).send(err);
+                        res.send({ user: user, token:encryptedToken });
+                        */
+                        //user.setToken(encryptedToken)
+                        user.token = encryptedToken
+                        user.save()
                         res.send({ user: user, token:encryptedToken });
                     });
                 }).catch((err) => {
