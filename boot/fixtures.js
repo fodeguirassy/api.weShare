@@ -17,6 +17,12 @@ module.exports = (app) => {
 		Specialty.findOrCreate ( { where : { title : "Swift",logo : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Swift_logo_with_text.svg/2000px-Swift_logo_with_text.svg.png"} })
 
 
+		User.findOrCreate({ where : { username : "Fodé Guirassy", password : sha1("yolo")}})
+						.spread((user) => user.setSpecialties([4, 5])).then((user) => user.setContents([3]))
+
+		User.findOrCreate ({where:{username : "Serey Pich", password : sha1("saaaaa")}}).spread((user) => user.setSpecialties([3]))
+		User.findOrCreate ({where:{username:"Karan WhatEver", password : sha1("pouet")}}).spread((user) => user.setSpecialties([1, 2]))
+
 		Content.findOrCreate({where : {title:'Tutoriel Git', fileUrl:'http://www.lmd.polytechnique.fr/~dkhvoros/teach/tutoriel-git.pdf', description: 'Git est un gestionnaire de version, libre et tres performant. Il possede de nombreuxavantages par rapport a svn, notamment, la possibilite de travailler localement. C’est a dire de faire des commits local et de les editer localement avant de les pousser vers un serveur pour qu’ils soient integres au depot central.'}})
 						.spread((content) => {content.setSpecialty(5)})
 		Content.findOrCreate({where : {title:'iOS Development', fileUrl:'https://www.tutorialspoint.com/ios/ios_tutorial.pdf', description:'iOS is a mobile operating system developed and distributed by Apple Inc. It was originally released in 2007 for the iPhone, iPod Touch, and Apple TV. iOS is derived from OS X, with which it shares the Darwin foundation. iOS is Apple mobile version of the OS X operating system used in Apple computers..'}})
@@ -29,13 +35,6 @@ module.exports = (app) => {
 		Content.findOrCreate({where : {title:'Tutoriel Git', fileUrl:'http://www.lmd.polytechnique.fr/~dkhvoros/teach/tutoriel-git.pdf', description:'Git est un gestionnaire de version, libre et tres performant. Il possede de nombreuxavantages par rapport a svn, notamment, la possibilite de travailler localement. C’est a dire de faire des commits local et de les editer localement avant de les pousser vers un serveur pour qu’ils soient integres au depot central.'}})
 						.spread((content) => {content.setSpecialty(1)})
 
-		User.findOrCreate({ where : { username : "Fodé Guirassy", password : sha1("yolo")}})
-				.spread((user) => user.setSpecialties([4, 5])).then((user) => user.setContents([3]))
-
-		User.findOrCreate ({where:{username : "Serey Pich", password : sha1("saaaaa")}}).spread((user) => user.setSpecialties([3]))
-		User.findOrCreate ({where:{username:"Karan WhatEver", password : sha1("pouet")}}).spread((user) => user.setSpecialties([1, 2]))
-
-
-
 	})
+
 }
