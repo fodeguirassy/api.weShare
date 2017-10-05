@@ -1,5 +1,5 @@
 {
-	"url": "http://127.0.0.1:3000/",
+	"url": "http://145.239.199.54:3000/",
   "uploadsDir": "uploads/",
 	"port" : "3000",
 	"name" : "template",
