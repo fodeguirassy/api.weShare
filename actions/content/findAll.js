@@ -5,7 +5,7 @@ module.exports = (app) => {
   const Content = app.models.Content
 
   return function(req, res, next) {
-    Content.findAll().then((contents) => {
+    Content.findAll({include : [ {model : Specialty}]}).then((contents) => {
       if(contents){return res.send(contents)}
       return res.status(404).send('No content found')
     })
