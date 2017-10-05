@@ -1,4 +1,7 @@
 module.exports = (app) => {
+
+	console.log('Loading actions');
+	
 	app.actions = {
 		auth:require('./auth')(app),
 		users:require('./users')(app),

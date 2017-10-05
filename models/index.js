@@ -1,4 +1,7 @@
 module.exports = (app) => {
+
+	console.log('Loading models');
+
 	app.models = {
 
 		User : require('./user')(app),
