@@ -10,7 +10,7 @@ module.exports = (app) => {
   router.post('/',
             //  app.middlewares.security.isAuthenticated,
               app.middlewares.bodyParser.json(),
-              app.middlewares.validators.contents,
+              //app.middlewares.validators.contents,
               app.actions.medias.create,
               app.actions.contents.create
             )
