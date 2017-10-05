@@ -17,10 +17,10 @@ module.exports = (app) => {
 		Specialty.findOrCreate ( { where : { title : "swift",logo : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Swift_logo_with_text.svg/2000px-Swift_logo_with_text.svg.png"} })
 
 
-		User.findOrCreate({ where : { username : "Fodé Guirassy", password : sha1("yolooo")}})
+		User.findOrCreate({ where : { username : "Fodé Guirassy", password : sha1("yolooo"), opens:12,class:'3A MOC'}})
 						.spread((user) => user.setSpecialties([4, 5])).then((user) => user.setContents([3]))
-		User.findOrCreate ({where:{username : "Serey Pich", password : sha1("saaaaa")}}).spread((user) => user.setSpecialties([3]))
-		User.findOrCreate ({where:{username:"Karan Guljinder", password : sha1("pouet")}}).spread((user) => user.setSpecialties([1, 2]))
+		User.findOrCreate ({where:{username : "Serey Pich", password : sha1("saaaaa"), opens:15, class:'4A MOC'}}).spread((user) => user.setSpecialties([3]))
+		User.findOrCreate ({where:{username:"Karan Guljinder", password : sha1("pouet"), opens:17, class:'4A MOC'}}).spread((user) => user.setSpecialties([1, 2]))
 
 		Content.findOrCreate({where : {title:'Tutoriel Git', fileUrl:'http://www.lmd.polytechnique.fr/~dkhvoros/teach/tutoriel-git.pdf', description: 'Git est un gestionnaire de version, libre et tres performant. Il possede de nombreuxavantages par rapport a svn, notamment, la possibilite de travailler localement. C’est a dire de faire des commits local et de les editer localement avant de les pousser vers un serveur pour qu’ils soient integres au depot central.'}})
 						.spread((content) => {content.setSpecialty(5)})

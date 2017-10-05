@@ -18,6 +18,12 @@ module.exports = (app) => {
         },
 				token : {
 					type: Sequelize.STRING
+				},
+				opens : {
+					type: Sequelize.INTEGER
+				},
+				class : {
+					type: Sequelize.STRING
 				}
     });
 }
