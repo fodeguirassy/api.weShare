@@ -9,7 +9,7 @@ module.exports = (app) => {
 		{force : true}
 	).then(() => {
 
-		Specialty.findOrCreate ( { where : { title : "nodejs",logo:"http://www.lnwebworks.com/sites/default/files/node.png" } })
+		Specialty.findOrCreate ( { where : { title : "nodejs", logo:"http://www.lnwebworks.com/sites/default/files/node.png" } })
 		Specialty.findOrCreate ( { where : { title : "android",logo : "http://www.pngmart.com/files/4/Android-PNG-Pic.png" } }),
 		Specialty.findOrCreate ( { where : { title : "ios",logo : "https://www.adiants.com/wp-content/uploads/2016/07/app-ios-png-4.png"} })
 		Specialty.findOrCreate ( { where : { title : "kotlin",logo : "https://vincentaube.net/images/language/kotlin.png" } })
@@ -20,7 +20,7 @@ module.exports = (app) => {
 		User.findOrCreate({ where : { username : "Fodé Guirassy", password : sha1("yolo")}})
 						.spread((user) => user.setSpecialties([4, 5])).then((user) => user.setContents([3]))
 		User.findOrCreate ({where:{username : "Serey Pich", password : sha1("saaaaa")}}).spread((user) => user.setSpecialties([3]))
-		User.findOrCreate ({where:{username:"Karan WhatEver", password : sha1("pouet")}}).spread((user) => user.setSpecialties([1, 2]))
+		User.findOrCreate ({where:{username:"Karan Guljinder", password : sha1("pouet")}}).spread((user) => user.setSpecialties([1, 2]))
 
 		Content.findOrCreate({where : {title:'Tutoriel Git', fileUrl:'http://www.lmd.polytechnique.fr/~dkhvoros/teach/tutoriel-git.pdf', description: 'Git est un gestionnaire de version, libre et tres performant. Il possede de nombreuxavantages par rapport a svn, notamment, la possibilite de travailler localement. C’est a dire de faire des commits local et de les editer localement avant de les pousser vers un serveur pour qu’ils soient integres au depot central.'}})
 						.spread((content) => {content.setSpecialty(5)})
