@@ -8,9 +8,10 @@ module.exports = (app) => {
   router.get('/', app.actions.contents.findAll)
 
   router.post('/',
-              app.middlewares.security.isAuthenticated,
+            //  app.middlewares.security.isAuthenticated,
               app.middlewares.bodyParser.json(),
               app.middlewares.validators.contents,
+              app.actions.medias.create,
               app.actions.contents.create
             )
   return router;
