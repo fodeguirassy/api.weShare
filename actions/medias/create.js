@@ -4,7 +4,7 @@ module.exports = (app) => {
 
   return function create(req, res, next) {
       let media = {
-          file: app.settings.url + app.settings.uploadsDir + req.savedfilename,
+          file: app.settings.url + app.settings.uploadsDir + req.body.filename,
           filename: req.body.filename,
       };
       Media.build(media).save().then((media) => {
