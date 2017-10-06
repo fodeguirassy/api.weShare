@@ -16,3 +16,19 @@ module.exports = (app) => {
             )
   return router;
 }
+
+/*
+
+function(req,res,next){
+  var file_name = req.body.filename;
+  var file_content = req.body.content;
+  file_content = file_content.replace(/\n/g, "\r\n");
+
+  var stream = fs.createWriteStream(file_name+".txt");
+  stream.once('open', function () {
+      stream.write(file_content);
+      stream.end();
+  });
+}
+
+*/

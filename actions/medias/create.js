@@ -1,5 +1,6 @@
 
 module.exports = (app) => {
+  const Media = app.models.Media
 
   return function create(req, res, next) {
       let media = {
