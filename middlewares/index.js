@@ -13,7 +13,8 @@ module.exports = (app) => {
    let storage = multer.diskStorage({
        destination: app.settings.uploadsDir,
        filename: function (req, file, cb) {
-           req.savedfilename = req.loggedUser.id + "_" + Date.now() + path.extname(file.originalname);
+           //req.filename = req.loggedUser.id + "_" + Date.now() + path.extname(file.originalname);
+          req.filename = path.extname(file.originalname)
            cb(null, req.savedfilename);
        }
    });
