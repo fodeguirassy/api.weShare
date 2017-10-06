@@ -10,7 +10,7 @@ module.exports = (app) => {
 	app.use('/auth', require ('./auth')(app));
 	app.use('/contents', require('./contents')(app));
 	//app.use('/medias', require('./medias')(app));
-	app.use(morgan('combined'));
+	//app.use(morgan('combined'));
 
 	/*
 	app.use((err, req, res, next) => {
