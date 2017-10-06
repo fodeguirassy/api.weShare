@@ -6,17 +6,19 @@ module.exports = (app) => {
 
   console.log('Loading middlewares');
 
+/*
   mkdirp(app.settings.uploadsDir, function (err) {
        if (err) console.error(err);
    });
+*/
    let storage = multer.diskStorage({
-       destination: function(req, file,cb) {
-         cb(null, app.settings.uploadsDir)
+       destination: function(req, file, callback) {
+         callback(null, app.settings.uploadsDir)
        },
-       filename: function (req, file, cb) {
+       filename: function (req, file, callback) {
            //req.filename = req.loggedUser.id + "_" + Date.now() + path.extname(file.originalname);
           //req.filename = path.extname(file.originalname)
-           cb(null, req.body.filename+ "_" + Date.now());
+           callback(null, req.body.filename+ "_" + Date.now()+ path.extname(file.originalname));
        }
    });
 
@@ -27,4 +29,5 @@ module.exports = (app) => {
     security : require('./security')(app),
     uploader : multer({storage : storage})
   }
+
 }

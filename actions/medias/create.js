@@ -9,7 +9,10 @@ module.exports = (app) => {
       };
       Media.build(media).save().then((media) => {
           if (!media) return res.status(500).send("Error saving file");
+          req.media = media
+
           res.send(media);
+
       }).catch((err) => {
           res.status(500).send(err.message);
       });

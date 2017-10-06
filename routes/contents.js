@@ -11,7 +11,7 @@ module.exports = (app) => {
             //  app.middlewares.security.isAuthenticated,
               app.middlewares.bodyParser.json(),
               //app.middlewares.validators.contents,
-              app.middlewares.uploader.single("picture"),
+              app.middlewares.uploader.single("media"),
               app.actions.medias.create,
               app.actions.contents.create
             )
