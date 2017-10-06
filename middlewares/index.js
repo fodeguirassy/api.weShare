@@ -10,11 +10,13 @@ module.exports = (app) => {
        if (err) console.error(err);
    });
    let storage = multer.diskStorage({
-       destination: app.settings.uploadsDir,
+       destination: function(req, file,cb) {
+         cb(null, app.settings.uploadsDir)
+       },
        filename: function (req, file, cb) {
            //req.filename = req.loggedUser.id + "_" + Date.now() + path.extname(file.originalname);
-          req.filename = path.extname(file.originalname)
-           cb(null, req.filename);
+          //req.filename = path.extname(file.originalname)
+           cb(null, req.body.filename+ "_" + Date.now());
        }
    });
 
